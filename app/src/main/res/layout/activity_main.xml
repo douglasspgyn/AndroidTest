@@ -10,4 +10,10 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context="douglasspgyn.com.github.androidtest.MainActivity">
 
+    <Button
+        android:id="@+id/unit_converter"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:text="@string/unit_converter" />
 </RelativeLayout>

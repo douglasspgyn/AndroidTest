@@ -1,3 +1,10 @@
 <resources>
-    <string name="app_name">AndroidTest</string>
+    <string name="app_name">Android Test</string>
+
+    <string name="unit_converter">Unit Converter</string>
+    <string name="temperature">Temperature</string>
+    <string name="convert_to_c">Convert to C</string>
+    <string name="convert_to_f">Convert to F</string>
+    <string name="temperature_c">Temperature: %1$s°C</string>
+    <string name="temperature_f">Temperature: %1$s°F</string>
 </resources>
