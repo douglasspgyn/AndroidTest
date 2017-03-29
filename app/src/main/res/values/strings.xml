@@ -10,11 +10,13 @@
 
     <string name="contacts">Contacts</string>
     <string name="create_contact">Create Contact</string>
+    <string name="edit_contact">Edit Contact</string>
 
     <string name="name">Name</string>
     <string name="phone">Phone</string>
     <string name="empty_field">This field must not be empty.</string>
 
     <string name="create">Create</string>
+    <string name="update">Update</string>
     <string name="cancel">Cancel</string>
 </resources>

@@ -17,7 +17,7 @@
         </activity>
         <activity android:name=".unitconverter.UnitConverterActivity" />
         <activity android:name=".contact.ContactActivity" />
-        <activity android:name=".contact.createcontact.CreateContactActivity"></activity>
+        <activity android:name=".contact.contactform.ContactFormActivity" />
     </application>
 
 </manifest>

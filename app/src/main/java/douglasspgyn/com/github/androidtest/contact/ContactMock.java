@@ -23,7 +23,7 @@ public class ContactMock {
         List<Contact> contacts = new ArrayList<>();
 
         for (int i = 0; i < 10; i++) {
-            contacts.add(new Contact("Contact " + i, "123456789"));
+            contacts.add(new Contact(i, "Contact " + i, "123456789"));
         }
 
         return contacts;
@@ -35,6 +35,14 @@ public class ContactMock {
         }
 
         contacts.add(contact);
+    }
+
+    public static void updateContact(Contact contact) {
+        for (int i = 0; i < contacts.size(); i++) {
+            if (contacts.get(i).getId() == contact.getId()) {
+                contacts.set(i, contact);
+            }
+        }
     }
 
     public static void removeContact(Contact contact) {

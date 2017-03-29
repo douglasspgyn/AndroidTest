@@ -1,12 +1,12 @@
 package douglasspgyn.com.github.androidtest.contact;
 
 import android.content.Context;
+import android.content.Intent;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import java.util.List;
 
@@ -14,6 +14,7 @@ import butterknife.Bind;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 import douglasspgyn.com.github.androidtest.R;
+import douglasspgyn.com.github.androidtest.contact.contactform.ContactFormActivity;
 
 /**
  * Created by Douglas on 29/03/17.
@@ -66,7 +67,7 @@ public class ContactAdapter extends RecyclerView.Adapter<ContactAdapter.ContactV
 
         @OnClick(R.id.contact_row)
         public void clickRow() {
-            Toast.makeText(context, name.getText() + " - " + phone.getText(), Toast.LENGTH_SHORT).show();
+            context.startActivity(new Intent(context, ContactFormActivity.class).putExtra("contact", getItem(getAdapterPosition())));
         }
 
         @OnClick(R.id.contact_delete)

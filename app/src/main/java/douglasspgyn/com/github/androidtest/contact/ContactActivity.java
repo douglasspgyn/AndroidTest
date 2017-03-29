@@ -11,7 +11,7 @@ import android.view.MenuItem;
 import butterknife.Bind;
 import butterknife.ButterKnife;
 import douglasspgyn.com.github.androidtest.R;
-import douglasspgyn.com.github.androidtest.contact.createcontact.CreateContactActivity;
+import douglasspgyn.com.github.androidtest.contact.contactform.ContactFormActivity;
 
 public class ContactActivity extends AppCompatActivity {
 
@@ -41,6 +41,15 @@ public class ContactActivity extends AppCompatActivity {
     }
 
     @Override
+    protected void onResume() {
+        super.onResume();
+
+        if (recyclerView.getAdapter() != null) {
+            recyclerView.getAdapter().notifyDataSetChanged();
+        }
+    }
+
+    @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         getMenuInflater().inflate(R.menu.menu_contact, menu);
         return super.onCreateOptionsMenu(menu);
@@ -53,7 +62,7 @@ public class ContactActivity extends AppCompatActivity {
                 finish();
                 break;
             case R.id.action_create_contact:
-                startActivity(new Intent(this, CreateContactActivity.class));
+                startActivity(new Intent(this, ContactFormActivity.class));
                 break;
         }
 
