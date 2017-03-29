@@ -37,6 +37,12 @@ public class ContactMock {
         contacts.add(contact);
     }
 
+    public static void removeContact(Contact contact) {
+        if (contacts != null && contact != null) {
+            contacts.remove(contact);
+        }
+    }
+
     private static void setContacts() {
         contacts = new ArrayList<>();
         contacts.addAll(getMockContacts());

@@ -47,6 +47,10 @@ public class ContactAdapter extends RecyclerView.Adapter<ContactAdapter.ContactV
         return contactList != null ? contactList.size() : 0;
     }
 
+    public Contact getItem(int position) {
+        return contactList.get(position);
+    }
+
     public class ContactViewHolder extends RecyclerView.ViewHolder {
 
         @Bind(R.id.contact_name)
@@ -63,6 +67,12 @@ public class ContactAdapter extends RecyclerView.Adapter<ContactAdapter.ContactV
         @OnClick(R.id.contact_row)
         public void clickRow() {
             Toast.makeText(context, name.getText() + " - " + phone.getText(), Toast.LENGTH_SHORT).show();
+        }
+
+        @OnClick(R.id.contact_delete)
+        public void clickDelete() {
+            ContactMock.removeContact(getItem(getAdapterPosition()));
+            notifyItemRemoved(getAdapterPosition());
         }
     }
 }
