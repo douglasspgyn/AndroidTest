@@ -1,11 +1,12 @@
 package douglasspgyn.com.github.androidtest;
 
 import android.content.Intent;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 
 import butterknife.ButterKnife;
 import butterknife.OnClick;
+import douglasspgyn.com.github.androidtest.contact.ContactActivity;
 import douglasspgyn.com.github.androidtest.unitconverter.UnitConverterActivity;
 
 public class MainActivity extends AppCompatActivity {
@@ -21,5 +22,10 @@ public class MainActivity extends AppCompatActivity {
     @OnClick(R.id.unit_converter)
     public void openUnitConverter() {
         startActivity(new Intent(this, UnitConverterActivity.class));
+    }
+
+    @OnClick(R.id.friend_list)
+    public void openRecyclerView() {
+        startActivity(new Intent(this, ContactActivity.class));
     }
 }

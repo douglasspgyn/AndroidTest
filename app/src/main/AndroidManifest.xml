@@ -15,7 +15,8 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".unitconverter.UnitConverterActivity"></activity>
+        <activity android:name=".unitconverter.UnitConverterActivity" />
+        <activity android:name=".contact.ContactActivity" />
     </application>
 
 </manifest>
