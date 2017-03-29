@@ -25,7 +25,7 @@ public class MainActivity extends AppCompatActivity {
         startActivity(new Intent(this, UnitConverterActivity.class));
     }
 
-    @OnClick(R.id.friend_list)
+    @OnClick(R.id.contact_list)
     public void openRecyclerView() {
         startActivity(new Intent(this, ContactActivity.class));
     }
