@@ -9,7 +9,7 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
-    tools:context="douglasspgyn.com.github.androidtest.unitconverter.UnitConverterActivity">
+    tools:context=".ui.unitconverter.UnitConverterActivity">
 
     <android.support.design.widget.TextInputLayout
         android:layout_width="match_parent"

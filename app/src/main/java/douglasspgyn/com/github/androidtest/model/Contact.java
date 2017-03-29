@@ -1,4 +1,4 @@
-package douglasspgyn.com.github.androidtest.contact;
+package douglasspgyn.com.github.androidtest.model;
 
 import java.io.Serializable;
 

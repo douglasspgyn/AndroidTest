@@ -1,7 +1,9 @@
-package douglasspgyn.com.github.androidtest.contact;
+package douglasspgyn.com.github.androidtest.utils;
 
 import java.util.ArrayList;
 import java.util.List;
+
+import douglasspgyn.com.github.androidtest.model.Contact;
 
 /**
  * Created by Douglas on 29/03/17.

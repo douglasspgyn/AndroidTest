@@ -1,4 +1,4 @@
-package douglasspgyn.com.github.androidtest.unitconverter;
+package douglasspgyn.com.github.androidtest.ui.unitconverter;
 
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;

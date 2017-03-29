@@ -1,4 +1,4 @@
-package douglasspgyn.com.github.androidtest;
+package douglasspgyn.com.github.androidtest.ui;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -6,8 +6,9 @@ import android.support.v7.app.AppCompatActivity;
 
 import butterknife.ButterKnife;
 import butterknife.OnClick;
-import douglasspgyn.com.github.androidtest.contact.ContactActivity;
-import douglasspgyn.com.github.androidtest.unitconverter.UnitConverterActivity;
+import douglasspgyn.com.github.androidtest.R;
+import douglasspgyn.com.github.androidtest.ui.contact.ContactActivity;
+import douglasspgyn.com.github.androidtest.ui.unitconverter.UnitConverterActivity;
 
 public class MainActivity extends AppCompatActivity {
 

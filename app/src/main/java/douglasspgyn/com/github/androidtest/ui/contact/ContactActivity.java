@@ -1,4 +1,4 @@
-package douglasspgyn.com.github.androidtest.contact;
+package douglasspgyn.com.github.androidtest.ui.contact;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -11,7 +11,8 @@ import android.view.MenuItem;
 import butterknife.Bind;
 import butterknife.ButterKnife;
 import douglasspgyn.com.github.androidtest.R;
-import douglasspgyn.com.github.androidtest.contact.contactform.ContactFormActivity;
+import douglasspgyn.com.github.androidtest.ui.contactform.ContactFormActivity;
+import douglasspgyn.com.github.androidtest.utils.ContactMock;
 
 public class ContactActivity extends AppCompatActivity {
 

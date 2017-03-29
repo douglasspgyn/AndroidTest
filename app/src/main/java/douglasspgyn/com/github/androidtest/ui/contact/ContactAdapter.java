@@ -1,4 +1,4 @@
-package douglasspgyn.com.github.androidtest.contact;
+package douglasspgyn.com.github.androidtest.ui.contact;
 
 import android.content.Context;
 import android.content.Intent;
@@ -14,7 +14,9 @@ import butterknife.Bind;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 import douglasspgyn.com.github.androidtest.R;
-import douglasspgyn.com.github.androidtest.contact.contactform.ContactFormActivity;
+import douglasspgyn.com.github.androidtest.model.Contact;
+import douglasspgyn.com.github.androidtest.ui.contactform.ContactFormActivity;
+import douglasspgyn.com.github.androidtest.utils.ContactMock;
 
 /**
  * Created by Douglas on 29/03/17.
