@@ -9,4 +9,12 @@
     <string name="temperature_f">Temperature: %1$s°F</string>
 
     <string name="contacts">Contacts</string>
+    <string name="create_contact">Create Contact</string>
+
+    <string name="name">Name</string>
+    <string name="phone">Phone</string>
+    <string name="empty_field">This field must not be empty.</string>
+
+    <string name="create">Create</string>
+    <string name="cancel">Cancel</string>
 </resources>

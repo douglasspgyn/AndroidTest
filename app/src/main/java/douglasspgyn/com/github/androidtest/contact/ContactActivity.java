@@ -1,14 +1,17 @@
 package douglasspgyn.com.github.androidtest.contact;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.view.Menu;
 import android.view.MenuItem;
 
 import butterknife.Bind;
 import butterknife.ButterKnife;
 import douglasspgyn.com.github.androidtest.R;
+import douglasspgyn.com.github.androidtest.contact.createcontact.CreateContactActivity;
 
 public class ContactActivity extends AppCompatActivity {
 
@@ -33,14 +36,25 @@ public class ContactActivity extends AppCompatActivity {
 
     private void setRecyclerView() {
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
-        ContactAdapter contactAdapter = new ContactAdapter(this, Contact.getMockContacts());
+        ContactAdapter contactAdapter = new ContactAdapter(this, ContactMock.getContacts());
         recyclerView.setAdapter(contactAdapter);
     }
 
     @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.menu_contact, menu);
+        return super.onCreateOptionsMenu(menu);
+    }
+
+    @Override
     public boolean onOptionsItemSelected(MenuItem item) {
-        if (item.getItemId() == android.R.id.home) {
-            finish();
+        switch (item.getItemId()) {
+            case android.R.id.home:
+                finish();
+                break;
+            case R.id.action_create_contact:
+                startActivity(new Intent(this, CreateContactActivity.class));
+                break;
         }
 
         return super.onOptionsItemSelected(item);
