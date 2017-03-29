@@ -36,7 +36,7 @@ public class UnitConverterActivity extends AppCompatActivity {
     @OnClick(R.id.convert_to_c)
     public void clickConvertToC() {
         if (isValidTemperature(temperatureToConvert)) {
-            float temperature = convertToC(Float.parseFloat(temperatureToConvert.getText().toString()));
+            double temperature = convertToC(Float.parseFloat(temperatureToConvert.getText().toString()));
             temperatureConverted.setText(getString(R.string.temperature_c, String.format("%.2f", temperature)));
         } else {
             temperatureConverted.setText("");
@@ -46,7 +46,7 @@ public class UnitConverterActivity extends AppCompatActivity {
     @OnClick(R.id.convert_to_f)
     public void clickConvertToF() {
         if (isValidTemperature(temperatureToConvert)) {
-            float temperature = convertToF(Float.parseFloat(temperatureToConvert.getText().toString()));
+            double temperature = convertToF(Float.parseFloat(temperatureToConvert.getText().toString()));
             temperatureConverted.setText(getString(R.string.temperature_f, String.format("%.2f", temperature)));
         } else {
             temperatureConverted.setText("");
@@ -57,12 +57,12 @@ public class UnitConverterActivity extends AppCompatActivity {
         return temperature != null && !temperature.getText().toString().isEmpty();
     }
 
-    public float convertToC(float temp) {
-        return (temp - 32) * 5 / 9;
+    public double convertToC(double temp) {
+        return (temp - 32) * (5 / 9.0);
     }
 
-    public float convertToF(float temp) {
-        return (temp * 9 / 5) + 32;
+    public double convertToF(double temp) {
+        return (temp * 9 / 5.0) + 32;
     }
 
     @Override
