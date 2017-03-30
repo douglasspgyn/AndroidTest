@@ -30,26 +30,26 @@ public class MainActivityInstrumentedTest extends TestCase {
     public ActivityTestRule<MainActivity> activityTestRule = new ActivityTestRule<>(MainActivity.class);
 
     @Test
-    public void openUnitTest() {
+    public void openUnitConverterTest() {
         onView(withId(R.id.unit_converter)).perform(click());
         onView(withId(R.id.temperature_to_convert)).check(matches(isDisplayed()));
     }
 
     @Test
-    public void openAndCloseUnitTest() {
+    public void openAndCloseUnitConverterTest() {
         onView(withId(R.id.unit_converter)).perform(click());
         onView(withId(R.id.temperature_to_convert)).perform(pressBack());
         onView(withId(R.id.unit_converter)).check(matches(isDisplayed()));
     }
 
     @Test
-    public void openContacts() {
+    public void openContactsTest() {
         onView(withId(R.id.contact_list)).perform(click());
         onView(withId(R.id.recycler_view)).check(matches(isDisplayed()));
     }
 
     @Test
-    public void openAndCloseContacts() {
+    public void openAndCloseContactsTest() {
         onView(withId(R.id.contact_list)).perform(click());
         onView(withId(R.id.recycler_view)).perform(pressBack());
         onView(withId(R.id.contact_list)).check(matches(isDisplayed()));

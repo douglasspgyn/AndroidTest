@@ -42,7 +42,7 @@ public class ContactActivityInstrumentedTest extends TestCase {
     public ActivityTestRule<ContactActivity> activityTestRule = new ActivityTestRule<>(ContactActivity.class);
 
     @Test
-    public void createContact() {
+    public void createContactTest() {
         int recyclerItemsBefore = ContactMock.getContacts().size();
 
         onView(withId(R.id.action_create_contact)).perform(click());
@@ -56,7 +56,7 @@ public class ContactActivityInstrumentedTest extends TestCase {
     }
 
     @Test
-    public void createContactNoName() {
+    public void createContactNoNameTest() {
         onView(withId(R.id.action_create_contact)).perform(click());
         onView(withId(R.id.create_contact_phone)).perform(typeText("123456789"), closeSoftKeyboard());
         onView(withId(R.id.save_contact)).perform(click());
@@ -64,7 +64,7 @@ public class ContactActivityInstrumentedTest extends TestCase {
     }
 
     @Test
-    public void createContactNoPhone() {
+    public void createContactNoPhoneTest() {
         onView(withId(R.id.action_create_contact)).perform(click());
         onView(withId(R.id.create_contact_name)).perform(typeText("Test"), closeSoftKeyboard());
         onView(withId(R.id.save_contact)).perform(click());
@@ -72,7 +72,7 @@ public class ContactActivityInstrumentedTest extends TestCase {
     }
 
     @Test
-    public void deleteContact() {
+    public void deleteContactTest() {
         int recyclerItemsBefore = ContactMock.getContacts().size();
 
         onView(withId(R.id.recycler_view)).perform(RecyclerViewActions.actionOnItemAtPosition(0, RowViewAction.clickChildViewWithId(R.id.contact_delete)));
@@ -105,7 +105,7 @@ public class ContactActivityInstrumentedTest extends TestCase {
     }
 
     @Test
-    public void editContact() {
+    public void editContactTest() {
         onView(withId(R.id.recycler_view)).perform(RecyclerViewActions.actionOnItemAtPosition(0, click()));
         onView(withId(R.id.create_contact_name)).perform(typeText(" Edit"), closeSoftKeyboard());
         onView(withId(R.id.save_contact)).perform(click());

@@ -31,40 +31,40 @@ public class UnitConverterInstrumentedTest extends TestCase {
     public ActivityTestRule<UnitConverterActivity> activityTestRule = new ActivityTestRule<>(UnitConverterActivity.class);
 
     @Test
-    public void convertToCEmpty() {
+    public void convertToCEmptyTest() {
         onView(withId(R.id.convert_to_c)).perform(click());
         onView(withId(R.id.temperature_converted)).check(matches(withText("")));
     }
 
     @Test
-    public void convertToCText() {
+    public void convertToCTextTest() {
         onView(withId(R.id.temperature_to_convert)).perform(typeText("aaa"), closeSoftKeyboard());
         onView(withId(R.id.convert_to_c)).perform(click());
         onView(withId(R.id.temperature_converted)).check(matches(withText("")));
     }
 
     @Test
-    public void convertToC() {
+    public void convertToCNumberTest() {
         onView(withId(R.id.temperature_to_convert)).perform(typeText("50"), closeSoftKeyboard());
         onView(withId(R.id.convert_to_c)).perform(click());
         onView(withId(R.id.temperature_converted)).check(matches(withText(activityTestRule.getActivity().getString(R.string.temperature_c, "10.00"))));
     }
 
     @Test
-    public void convertToFEmpty() {
+    public void convertToFEmptyTest() {
         onView(withId(R.id.convert_to_f)).perform(click());
         onView(withId(R.id.temperature_converted)).check(matches(withText("")));
     }
 
     @Test
-    public void convertToFText() {
+    public void convertToFTextTest() {
         onView(withId(R.id.temperature_to_convert)).perform(typeText("aaa"), closeSoftKeyboard());
         onView(withId(R.id.convert_to_f)).perform(click());
         onView(withId(R.id.temperature_converted)).check(matches(withText("")));
     }
 
     @Test
-    public void convertToF() {
+    public void convertToFNumberTest() {
         onView(withId(R.id.temperature_to_convert)).perform(typeText("50"), closeSoftKeyboard());
         onView(withId(R.id.convert_to_f)).perform(click());
         onView(withId(R.id.temperature_converted)).check(matches(withText(activityTestRule.getActivity().getString(R.string.temperature_f, "122.00"))));
