@@ -27,6 +27,7 @@ import static android.support.test.espresso.action.ViewActions.click;
 import static android.support.test.espresso.action.ViewActions.closeSoftKeyboard;
 import static android.support.test.espresso.action.ViewActions.typeText;
 import static android.support.test.espresso.assertion.ViewAssertions.matches;
+import static android.support.test.espresso.matcher.ViewMatchers.hasErrorText;
 import static android.support.test.espresso.matcher.ViewMatchers.withId;
 import static android.support.test.espresso.matcher.ViewMatchers.withText;
 
@@ -52,6 +53,22 @@ public class ContactActivityInstrumentedTest extends TestCase {
         int recyclerItemsAfter = ContactMock.getContacts().size();
 
         assertEquals(recyclerItemsBefore, recyclerItemsAfter - 1);
+    }
+
+    @Test
+    public void createContactNoName() {
+        onView(withId(R.id.action_create_contact)).perform(click());
+        onView(withId(R.id.create_contact_phone)).perform(typeText("123456789"), closeSoftKeyboard());
+        onView(withId(R.id.save_contact)).perform(click());
+        onView(withId(R.id.create_contact_name)).check(matches(hasErrorText(activityTestRule.getActivity().getString(R.string.empty_field))));
+    }
+
+    @Test
+    public void createContactNoPhone() {
+        onView(withId(R.id.action_create_contact)).perform(click());
+        onView(withId(R.id.create_contact_name)).perform(typeText("Test"), closeSoftKeyboard());
+        onView(withId(R.id.save_contact)).perform(click());
+        onView(withId(R.id.create_contact_phone)).check(matches(hasErrorText(activityTestRule.getActivity().getString(R.string.empty_field))));
     }
 
     @Test
