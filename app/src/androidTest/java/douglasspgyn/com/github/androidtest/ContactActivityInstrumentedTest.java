@@ -23,6 +23,7 @@ import douglasspgyn.com.github.androidtest.ui.contact.ContactActivity;
 import douglasspgyn.com.github.androidtest.utils.ContactMock;
 
 import static android.support.test.espresso.Espresso.onView;
+import static android.support.test.espresso.action.ViewActions.clearText;
 import static android.support.test.espresso.action.ViewActions.click;
 import static android.support.test.espresso.action.ViewActions.closeSoftKeyboard;
 import static android.support.test.espresso.action.ViewActions.typeText;
@@ -107,10 +108,11 @@ public class ContactActivityInstrumentedTest extends TestCase {
     @Test
     public void editContactTest() {
         onView(withId(R.id.recycler_view)).perform(RecyclerViewActions.actionOnItemAtPosition(0, click()));
-        onView(withId(R.id.create_contact_name)).perform(typeText(" Edit"), closeSoftKeyboard());
+        onView(withId(R.id.create_contact_name)).perform(clearText());
+        onView(withId(R.id.create_contact_name)).perform(typeText("Edited"), closeSoftKeyboard());
         onView(withId(R.id.save_contact)).perform(click());
 
-        onView(withRecyclerView(R.id.recycler_view).atPositionOnView(0, R.id.contact_name)).check(matches(withText("Contact 0 Edit")));
+        onView(withRecyclerView(R.id.recycler_view).atPositionOnView(0, R.id.contact_name)).check(matches(withText("Edited")));
     }
 
     public static RecyclerViewMatcher withRecyclerView(final int recyclerViewId) {
